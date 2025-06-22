@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Halal Food Supply Chain</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+<body>
+  <img src="images/bgt.png" class="bgimg" alt="bg">
+  <h1>Halal Food Supply Chain</h1>
+
+  <div class="section">
+    <h2>Connect Wallet</h2>
+    <button onclick="connect()">Connect MetaMask</button>
+    <p id="wallet" class="connectstyle"></p>
+  </div>
+
+  <div class="section">
+    <h2>Assign Role</h2>
+    <select id="role">
+      <option value="">-- Select Role --</option>
+      <option value="1">Farmer</option>
+      <option value="2">Distributor</option>
+      <option value="3">Retailer/Consumer</option>
+    </select>
+    <button onclick="assignRole()">Submit</button>
+  </div>
+
+  <div class="section hidden" id="farmerSection">
+    <h2>Add Meat Info</h2>
+    <input id="meatId" placeholder="Meat ID">
+    <input id="halalCert" placeholder="Halal Certification">
+    <input id="slaughterDate" placeholder="Slaughter Date">
+    <input id="farmLocation" placeholder="Farm Location">
+    <button onclick="addMeat()">Submit</button>
+  </div>
+
+  <div class="section hidden" id="distributorSection">
+    <h2>Add Shipment</h2>
+    <input id="shipMeatId" placeholder="Meat ID">
+    <input id="temp" placeholder="Temperature (°C)">
+    <input id="humidity" placeholder="Humidity (%)">
+    <input id="timestamp" placeholder="Timestamp">
+    <input id="location" placeholder="Location">
+    <input id="notes" placeholder="Handling Notes">
+    <button onclick="addShipment()">Submit</button>
+  </div>
+
+  <div class="section hidden" id="consumerSection">
+    <h2>View Meat Info</h2>
+    <input id="viewId" placeholder="Meat ID">
+    <button onclick="viewMeat()">Submit</button>
+    <pre id="meatInfo"></pre>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
